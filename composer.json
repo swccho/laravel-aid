@@ -1,0 +1,20 @@
+{
+    "name": "ahs/laravel-helpers",
+    "description": "A collection of helper functions for Laravel",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Ahs\\LaravelHelpers\\": "LaravelHelpers/src/"
+        },
+        "files": [
+            "LaravelHelpers/src/Helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Ali Haider"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
