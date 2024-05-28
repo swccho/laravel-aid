@@ -1,5 +1,5 @@
 {
-    "name": "ahs/laravel-helpers",
+    "name": "ahs-composer/laravel-helpers",
     "description": "A collection of helper functions for Laravel",
     "type": "library",
     "autoload": {
