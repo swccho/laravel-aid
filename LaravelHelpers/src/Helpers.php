@@ -63,7 +63,7 @@ class Helpers
      * @param array $array The array to search in.
      * @return bool True if the key exists, false otherwise.
      */
-    public static function array_key_exists_recursive($key, $array)
+    public static function array_key_exists_recursive($key, $array): bool
     {
         if (array_key_exists($key, $array)) {
             return true;
