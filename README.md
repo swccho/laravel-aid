@@ -7,7 +7,7 @@ A collection of helper functions for Laravel, created by [Ali Haider](https://gi
 You can install this package via Composer. Run the following command in your terminal:
 
 ```bash
-composer require ahs/laravel-helpers
+composer require ahs-composer/laravel-helpers
 ```
 
 # Usage
