@@ -16,5 +16,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "nesbot/carbon": "^2.0",
+        "illuminate/support": "^8.0"
+    }
+
 }
