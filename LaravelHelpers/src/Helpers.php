@@ -12,7 +12,7 @@ class Helpers
      * @param string $string The input string.
      * @return string The slugified string.
      */
-    public function slugify($string)
+    public static function slugify($string)
     {
         return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
     }
@@ -25,7 +25,7 @@ class Helpers
      * @param string $append The suffix to append if the string is truncated.
      * @return string The truncated string.
      */
-    public function truncate($string, $length = 100, $append = "...")
+    public static function truncate($string, $length = 100, $append = "...")
     {
         return strlen($string) > $length ? substr($string, 0, $length) . $append : $string;
     }
@@ -36,7 +36,7 @@ class Helpers
      * @param string $string The input string.
      * @return string The camelCase string.
      */
-    public function camelCase($string)
+    public static function camelCase($string)
     {
         return lcfirst(str_replace(' ', '', ucwords(str_replace(['-', '_'], ' ', $string))));
     }
@@ -47,7 +47,7 @@ class Helpers
      * @param array $array The input array.
      * @return array The flattened array.
      */
-    public function array_flatten($array)
+    public static function array_flatten($array)
     {
         $result = [];
         array_walk_recursive($array, function($a) use (&$result) {
@@ -63,7 +63,7 @@ class Helpers
      * @param array $array The array to search in.
      * @return bool True if the key exists, false otherwise.
      */
-    public function array_key_exists_recursive($key, $array)
+    public static function array_key_exists_recursive($key, $array)
     {
         if (array_key_exists($key, $array)) {
             return true;
@@ -83,7 +83,7 @@ class Helpers
      * @param string $format The format to apply.
      * @return string The formatted date string.
      */
-    public function format_date($date, $format = 'Y-m-d H:i:s')
+    public static function format_date($date, $format = 'Y-m-d H:i:s')
     {
         return date($format, strtotime($date));
     }
@@ -94,7 +94,7 @@ class Helpers
      * @param string|null $date The input date string (optional).
      * @return \Carbon\Carbon The Carbon date instance.
      */
-    public function carbon_date($date = null)
+    public static function carbon_date($date = null)
     {
         return $date ? Carbon::parse($date) : Carbon::now();
     }
@@ -104,7 +104,7 @@ class Helpers
      *
      * @return string The current URL.
      */
-    public function current_url()
+    public static function current_url()
     {
         return url()->current();
     }
@@ -116,7 +116,7 @@ class Helpers
      * @param array $params The query parameters.
      * @return string The constructed URL.
      */
-    public function url_with_params($url, $params = [])
+    public static function url_with_params($url, $params = [])
     {
         return $url . '?' . http_build_query($params);
     }
@@ -127,7 +127,7 @@ class Helpers
      * @param string $path The file path.
      * @return string The formatted file size.
      */
-    public function file_size_formatted($path)
+    public static function file_size_formatted($path)
     {
         $bytes = filesize($path);
         $units = ['B', 'KB', 'MB', 'GB', 'TB'];
@@ -142,7 +142,7 @@ class Helpers
      * @param mixed $default The default value if the key does not exist.
      * @return mixed The value of the environment variable or the default value.
      */
-    public function env_value($key, $default = null)
+    public static function env_value($key, $default = null)
     {
         return env($key, $default);
     }
@@ -154,7 +154,7 @@ class Helpers
      * @return string The generated random string.
      * @throws \Exception If an appropriate source of randomness cannot be found.
      */
-    public function generate_random_string($length = 16)
+    public static function generate_random_string($length = 16)
     {
         return bin2hex(random_bytes($length / 2));
     }
